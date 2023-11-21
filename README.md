@@ -13,5 +13,4 @@ Allow the "scrap per day" dividing factor to be customizable by the host of the 
 # Special Notice/Thanks
 This is my first attempt at a mod for the game Lethal Company. I plan for this to be a stepping stone on to more complicated and feature rich mods.
 
-Special thanks to discord users: 
-Mama Llama, for answering the majority of my questions in regards to learning how to make mods for Lethal Company. 
+Special thanks to discord user Mama Llama for answering the majority of my questions in regards to learning how to make mods for Lethal Company. 
