@@ -2,9 +2,9 @@
 Just a simple mod that increases the deadline along with the quota increase.
 
 # Installation
-1. Install BepInEx
-2. Run game once with BepInEx installed to generate necessary folders and files
-3. Move the "DynamicDays.Dll" from DynamicDays/BepInEx/plugins to the BepInEx/plugins folder in your Lethal Company game directory.
+1. Install BepInEx.
+2. Run your game once with BepInEx installed to generate the necessary folders and files.
+3. Move the "DynamicDeadline.dll" from the DynamicDeadline/BepInEx/plugins folder to the BepInEx/plugins folder in your Lethal Company game directory.
 4. You're done!
 
 # Plans for the future
