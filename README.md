@@ -9,6 +9,11 @@ Just a simple mod that increases the deadline along with the quota increase.
 5. Modify the Config Haha.DynamicDeadline.cfg within your game directory's BepInEx/config folder and change the setting DailyScrapValue to an amount of scrap you can achieve per day.
 6. You're done!
 
+### Conflicts/Incompatability
+
+---
+
+This mod postfixes the TimeOfDay.SetNewProfitQuota() method. Any mod that also interacts or replaces this method could potentially clash and cause problems.
 
 ### Special Notice
 This is my first attempt at making a mod for the game Lethal Company. I plan for this to be a stepping stone on to more complicated and feature rich mods.
