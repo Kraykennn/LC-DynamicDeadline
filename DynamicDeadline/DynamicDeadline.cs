@@ -25,9 +25,9 @@ namespace DynamicDeadlineMod
 
         static internal ConfigEntry<float> MinScrapValuePerDay;
 
-        static internal ConfigEntry<bool> legacyCal;
+        static internal ConfigEntry<bool> incrementalCal;
 
-        static internal ConfigEntry<float> legacyDailyValue;
+        static internal ConfigEntry<float> incrementalDailyValue;
 
         static internal ConfigEntry<bool> useMinMax;
 
@@ -56,9 +56,9 @@ namespace DynamicDeadlineMod
 
             setMaximumDays = Config.Bind("Customizable Values", "Maximum Deadline", float.MaxValue, "If use Custom Deadline Range is enabled, this is the maximum deadline you will have.");
 
-            legacyCal = Config.Bind("Customizeable Values - Legacy", "Legacy Calculations", false, "Set to true if you want to use the deadline calculation from 1.1.0 prior.");
+            incrementalCal = Config.Bind("Customizeable Values - Incremental", "Incremental Calculations", false, "Toggle this option to activate deadline-based calculation for incrementally raising the MinScrapValuePerDay each time you meet a quota, ensuring a slower increase in the amount of days. This will Disable the default bevahiour of increasing this based on average of your daily scrap.");
 
-            legacyDailyValue = Config.Bind("Customizeable Values - Legacy", "Daily Scrap Value", 200f, "Set this number to the value of scrap you can reasonably achieve in a single day.");
+            incrementalDailyValue = Config.Bind("Customizable Values", "Incremental Daily Value", 30f, "If Use incremental minimum daily ScrapValue, this is the amount it will increase every time a quota is complete.");
 
             harmony.PatchAll(typeof(DynamicDeadlineMod));
             harmony.PatchAll(typeof(ProfitQuotaPatch));

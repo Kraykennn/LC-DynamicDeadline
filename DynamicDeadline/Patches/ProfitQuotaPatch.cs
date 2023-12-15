@@ -95,7 +95,7 @@ namespace DynamicDeadlineMod.Patches
                 DynamicDeadlineMod.Instance.mls.LogInfo($"Could not load totalOfAverage variable as it does not exist! Creating now!");
             }
 
-            if (isHost && DynamicDeadlineMod.legacyCal.Value == false)
+            if (isHost && DynamicDeadlineMod.incrementalCal.Value == false)
             {
                 float dynamicDifficulty = Mathf.Clamp(Mathf.Ceil( quotaFulfilled / previousDeadline), DynamicDeadlineMod.MinScrapValuePerDay.Value, 1000f);
 
@@ -122,10 +122,10 @@ namespace DynamicDeadlineMod.Patches
                 ES3.Save("previousDeadline", previousDeadline, currentSaveFile);
                 ES3.Save("totalOfAverage", totalOfAverage, currentSaveFile);
             }
-            else if (isHost && DynamicDeadlineMod.legacyCal.Value == true)
+            else if (isHost && DynamicDeadlineMod.incrementalCal.Value == true)
             {
-                __instance.timeUntilDeadline = (float)__instance.totalTime * Mathf.Clamp(Mathf.Ceil( __instance.profitQuota / DynamicDeadlineMod.legacyDailyValue.Value), minimumDays, maximumDays);
-                DynamicDeadlineMod.Instance.mls.LogInfo("This person is the host and using the legacy difficulty calculations. Changing deadline.");
+                __instance.timeUntilDeadline = (float)__instance.totalTime * Mathf.Clamp(Mathf.Ceil( __instance.profitQuota / DynamicDeadlineMod.MinScrapValuePerDay.Value + (runCount * DynamicDeadlineMod.incrementalDailyValue.Value)), minimumDays, maximumDays);
+                DynamicDeadlineMod.Instance.mls.LogInfo("This person is the host and using the incremental difficulty calculations. Changing deadline.");
                 TimeOfDay.Instance.SyncTimeClientRpc(__instance.globalTime, (int)__instance.timeUntilDeadline);
             }
             else
